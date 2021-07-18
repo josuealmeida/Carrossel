@@ -1,0 +1,56 @@
+@import 'miniframework v1.0/scss/variaveis.scss';
+@import 'miniframework v1.0/scss/mixins.scss';
+
+*{
+	font-family: 'Quicksand', sans-serif;
+}
+
+// ----- ----- Container ----- ----- //
+#carrousel-container{
+	position: relative;
+
+	// control buttons
+	& > .bx{
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		background: rgba(220 220 220 / .6);
+		color: $white;
+		font-size: $size3;
+		cursor: pointer;
+		z-index: 50;
+
+		&:hover{
+			background: rgba(220 220 220 / .4);
+		}
+
+		&.bx-chevron-left{
+			left: 0;
+		}
+
+		&.bx-chevron-right{
+			right: 0;
+		}
+	}
+
+	// Carrousel
+	#carrousel{
+		position: relative;
+		display: flex;
+		overflow: hidden;
+
+		.slide{
+			@include flex(flex-start, center);
+			min-width: 100%;
+			height: 70vh;
+			background-color: $light;
+			transform: translateX(-0%);
+			transition: transform .5s;
+
+			img{
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+}
